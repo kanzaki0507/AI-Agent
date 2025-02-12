@@ -12,7 +12,6 @@ from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 load_dotenv()
-# os.environ["OPENAI_API_KEY"]="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"
 
 MODEL_PRICES = {
     "input": {
