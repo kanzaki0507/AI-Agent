@@ -2,6 +2,9 @@ import base64
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
 from langchain_community.utilities.dalle_image_generator import DallEAPIWrapper
+from dotenv import load_dotenv
+
+load_dotenv()
 
 GPT4V_PROMPT = """
 まず、以下のユーザーのリクエストとアップロードされた画像を注意深く読んでください。
@@ -19,9 +22,9 @@ DALL-E 3向けのプロンプトを英語で回答してください:
 """
 
 def init_page():
-    st.set_page_cofig(
+    st.set_page_config(
         page_title="Image Converter",
-        page_icon="🤗"
+        page_icon=".\img\icon.png"
     )
     st.header("Image Converter 🤗")
 
@@ -32,7 +35,7 @@ def main():
     llm = ChatOpenAI(
         temperature=0,
         model="gpt-4o",
-        max_token=512
+        # max_token=512
     )
 
     dalle3_image_url = None
